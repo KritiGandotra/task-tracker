@@ -1,0 +1,10 @@
+<!-- to loop through tasks we are using directives-->
+<!-- [task]="task" is adding property for every iteration-->
+<!-- $event is used to get the task through that-->
+<app-add-task (onAddTask)="addTask($event)"></app-add-task>
+<app-task-item
+  *ngFor="let task of tasks"
+  [task]="task"
+  (onDeleteTask)="deleteTask(task)"
+  (onToggleTask)="ToggleTask(task)"
+></app-task-item>
